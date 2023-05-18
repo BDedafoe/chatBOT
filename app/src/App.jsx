@@ -1,11 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, Message, MessageList, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
-const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
-  "role": "system", "content": "Explain things like you're talking to a software professional with 2 years of experience."
+const systemMessage = { //  The chatBOT is a helpful assistant 
+  "role": "system", "content": "You are a helpful assistant."
 }
 
 function App() {
@@ -84,7 +85,7 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ position:"relative", height: "800px", width: "700px"  }}>
+      <div style={{ position:"relative", height: "100vh", width: "100%", margin: "0" }}>
         <MainContainer>
           <ChatContainer>       
             <MessageList 
@@ -96,7 +97,7 @@ function App() {
                 return <Message key={i} model={message} />
               })}
             </MessageList>
-            <MessageInput placeholder="Type message here" onSend={handleSend} />        
+            <MessageInput placeholder="Type message here" onSend={handleSend} />   
           </ChatContainer>
         </MainContainer>
       </div>
