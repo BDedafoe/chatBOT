@@ -1,61 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;1,400&display=swap");
 body {
-  background-color: #0a0b0c;
-}
-
-.cs-main-container .cs-chat-container {
-  order: 1;
-  z-index: 1;
-  flex-grow: 1;
-  flex-basis: 30%;
-  display: flex;
-  overflow: auto;
-  width: auto;
-}
-
-.cs-chat-container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  color: #fcfcfc;
+  margin: 0;
+  background-color: black;
+  height: 100vh;
 }
 
 .cs-main-container {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  border: outset 2px #F9B775;
+  border: outset 6px #00bcd4;
   border-radius: 15px;
   box-sizing: border-box;
-  color: #fcfcfc;
+  color: #03a9f4;
   font-size: 1rem;
-  width: 100%;
+  height: 100vh;
 }
 
 .cs-message-list {
   padding-top: 10px;
-  box-sizing: border-box;
-  overflow: hidden;
-  position: relative;
-  color: #fcfcfc;
-  background-color: #0a0b0c;
+  background-color: #EEEEEE;
 }
 
 .cs-chat-container .cs-message-input {
-  border-top: solid 1px #F9B775;
+  border-top: solid 1px #00bcd4;
   padding: 0.6em 0 0.6em 0em;
-  color: #fcfcfc;
-  background-color: #0a0b0c;
-}
-
-.cs-message-input {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  box-sizing: border-box;
-  padding: 0;
-  overflow: visible;
-  flex-shrink: 0;
+  color: #03a9f4;
+  background-color: #EEEEEE;
 }
 
 .cs-message-input__tools {
@@ -65,15 +33,15 @@ body {
   cursor: pointer;
   transition: border-color 0.25s;
   border-radius: 8px;
-  border: 1.4px solid transparent;
+  border: 1.6px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1.1em;
-  margin: 2px 10px 2px 10px;
+  margin: 2px 5px 2px 5px;
   align-self: center;
 }
 
 .cs-message-input__tools:hover {
-  border-color: #F9B775;
+  border-color: #9c27b0;
 }
 
 .cs-message-input__tools:focus,
@@ -83,31 +51,74 @@ body {
 
 .cs-message__content {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #FF6F61;
-  white-space: pre-wrap;
-  overflow-wrap: normal;
-  word-break: break-word;
+  background-color: #1abc9c;
   font-family: "Inter", sans-serif;
   font-size: 0.9em;
 }
 
 .cs-message-input__content-editor-wrapper {
-  background-color: #141415;
+  background-color: #e2fbfe;
   margin: 0;
-  padding: 1.2em 1em;
+  padding: 1.5em 1em;
   border-radius: 0.7em;
-  border: solid 1px #FF6F61;
-  flex-grow: 1;
+  border: solid 1px #1abc9c;
 }
 
 .cs-message-input__content-editor {
-  background-color: #141415;
-  color: #fcfcfc;
+  background-color: #e2fbfe;
+  color: #03a9f4;
 }
 
-@media only screen and (max-width: 600px) {
+.cs-message-input__content-editor[data-placeholder]:empty:before {
+  color: #03a9f4;
+  opacity: 0.3;
+}
+
+.cs-message.cs-message--outgoing {
+  padding: 5px;
+}
+
+.cs-message--outgoing .cs-message__content {
+  background-color: #03a9f4;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
   .cs-main-container {
-    width: auto;
-    margin: 10px;
+    height: 80vh;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
+  body {
+    overflow: hidden;
+  }
+  .cs-main-container {
+    height: 80vh;
+  }
+}
+@media only screen and (min-device-width: 568px) and (max-device-width: 320px) and (orientation: landscape) {
+  body {
+    overflow: hidden;
+  }
+  .cs-main-container {
+    height: 80vh;
+  }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
+  body {
+    overflow: hidden;
+  }
+  .cs-main-container {
+    height: 80vh;
+  }
+}
+@media only screen and (min-device-width: 812px) and (max-device-width: 375px) and (orientation: landscape) {
+  body {
+    overflow: hidden;
+  }
+  .cs-main-container {
+    height: 80vh;
   }
 }

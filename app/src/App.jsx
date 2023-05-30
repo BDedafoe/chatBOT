@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
-import style from '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
+import style from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import { MainContainer, ChatContainer, Message, MessageList, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -29,12 +29,28 @@ function App() {
     const newMessages = [...messages, newMessage];
     
     setMessages(newMessages);
-
     // Initial system message to determine ChatGPT functionality
     // How it responds, how it talks, etc.
     setIsTyping(true);
     await processMessageToChatGPT(newMessages);
   };
+
+  // iPhone return key event 
+  const handleKeyDown = async (message) => {
+    if (message.keyCode === 13) {
+      const newMessage = {
+        message,
+        direction: 'outgoing',
+        sender: "user"
+      };
+  
+      const newMessages = [...messages, newMessage];
+      
+      setMessages(newMessages);
+      setIsTyping(true);
+      await processMessageToChatGPT(newMessages);
+    }
+  }
 
   async function processMessageToChatGPT(chatMessages) { // messages is an array of messages
     // Format messages for chatGPT API
@@ -52,14 +68,12 @@ function App() {
     });
 
 
-    // Get the request body set up with the model we plan to use
-    // and the messages which we formatted above. We add a system message in the front to'
-    // determine how we want chatGPT to act. 
+  
     const apiRequestBody = {
       "model": "gpt-3.5-turbo",
       "messages": [
-        systemMessage,  // The system message DEFINES the logic of our chatGPT
-        ...apiMessages // The messages from our chat with ChatGPT
+        systemMessage,  // The system message DEFINES the logic of chatGPT
+        ...apiMessages // The messages from chat with chatGPT
       ]
     }
 
@@ -85,22 +99,20 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ position:"relative", height:"600px" }}>
         <MainContainer>
           <ChatContainer>       
             <MessageList 
               scrollBehavior="smooth" 
-              typingIndicator={isTyping ? <TypingIndicator content="Hmmm...Let me think"/> : null}
+              typingIndicator={isTyping ? <TypingIndicator content="One moment"/> : null}
             >
               {messages.map((message, i) => {
                 console.log(message)
                 return <Message key={i} model={message} />
               })}
             </MessageList>
-            <MessageInput placeholder="Type message here" onSend={handleSend} />   
+            <MessageInput placeholder="Type message here" onSend={handleSend} onClick={handleKeyDown}/>   
           </ChatContainer>
         </MainContainer>
-      </div>
     </div>
   )
 }
