@@ -16,7 +16,7 @@
 
 $primary: #1abc9c; // Teal
 $secondary: #9c27b0;
-$background: #EEEEEE; // Grey
+$background: #ffffff; // Grey
 $border: #00bcd4;
 $input:  #e2fbfe;
 $font: #03a9f4; // Cyan
@@ -25,7 +25,7 @@ body {
   margin: 0;
   background-color: black;
   height: 100vh;
-
+  width: 100%;
 }
 
 .cs-main-container {

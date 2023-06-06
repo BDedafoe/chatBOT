@@ -3,6 +3,7 @@ body {
   margin: 0;
   background-color: black;
   height: 100vh;
+  width: 100%;
 }
 
 .cs-main-container {
@@ -16,14 +17,14 @@ body {
 
 .cs-message-list {
   padding-top: 10px;
-  background-color: #EEEEEE;
+  background-color: #ffffff;
 }
 
 .cs-chat-container .cs-message-input {
   border-top: solid 1px #00bcd4;
   padding: 0.6em 0 0.6em 0em;
   color: #03a9f4;
-  background-color: #EEEEEE;
+  background-color: #ffffff;
 }
 
 .cs-message-input__tools {
