@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;1,400&display=swap");
+:root {
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 body {
   margin: 0;
   background-color: black;
@@ -7,24 +12,25 @@ body {
 }
 
 .cs-main-container {
+  position: relative;
   border: outset 6px #00bcd4;
   border-radius: 15px;
   box-sizing: border-box;
-  color: #03a9f4;
+  color: #07e7fb;
   font-size: 1rem;
   height: 100vh;
 }
 
 .cs-message-list {
   padding-top: 10px;
-  background-color: #ffffff;
+  background-color: #2f3538;
 }
 
 .cs-chat-container .cs-message-input {
   border-top: solid 1px #00bcd4;
   padding: 0.6em 0 0.6em 0em;
-  color: #03a9f4;
-  background-color: #ffffff;
+  color: #07e7fb;
+  background-color: #2f3538;
 }
 
 .cs-message-input__tools {
@@ -42,7 +48,7 @@ body {
 }
 
 .cs-message-input__tools:hover {
-  border-color: #9c27b0;
+  border-color: #55ee3a;
 }
 
 .cs-message-input__tools:focus,
@@ -50,28 +56,32 @@ body {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
+.cs-message-input__tools:first-child .cs-button:last-child {
+  color: #2f3538;
+}
+
 .cs-message__content {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #1abc9c;
+  background-color: #ffa895;
   font-family: "Inter", sans-serif;
   font-size: 0.9em;
 }
 
 .cs-message-input__content-editor-wrapper {
-  background-color: #e2fbfe;
+  background-color: #2f3538;
   margin: 0;
   padding: 1.5em 1em;
   border-radius: 0.7em;
-  border: solid 1px #1abc9c;
+  border: solid 1px #ffa895;
 }
 
 .cs-message-input__content-editor {
-  background-color: #e2fbfe;
-  color: #03a9f4;
+  background-color: #2f3538;
+  color: #07e7fb;
 }
 
 .cs-message-input__content-editor[data-placeholder]:empty:before {
-  color: #03a9f4;
+  color: #07e7fb;
   opacity: 0.3;
 }
 
@@ -80,7 +90,7 @@ body {
 }
 
 .cs-message--outgoing .cs-message__content {
-  background-color: #03a9f4;
+  background-color: #07e7fb;
 }
 
 @media screen and (max-width: 768px) {
@@ -88,38 +98,7 @@ body {
     overflow: hidden;
   }
   .cs-main-container {
-    height: 80vh;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-  body {
-    overflow: hidden;
-  }
-  .cs-main-container {
-    height: 80vh;
-  }
-}
-@media only screen and (min-device-width: 568px) and (max-device-width: 320px) and (orientation: landscape) {
-  body {
-    overflow: hidden;
-  }
-  .cs-main-container {
-    height: 80vh;
-  }
-}
-@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
-  body {
-    overflow: hidden;
-  }
-  .cs-main-container {
-    height: 80vh;
-  }
-}
-@media only screen and (min-device-width: 812px) and (max-device-width: 375px) and (orientation: landscape) {
-  body {
-    overflow: hidden;
-  }
-  .cs-main-container {
-    height: 80vh;
+    height: 650px;
+    width: 100%;
   }
 }

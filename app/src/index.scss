@@ -64,6 +64,10 @@ body {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
+.cs-message-input__tools:first-child .cs-button:last-child {
+  color: #2f3538;
+}
+
 .cs-message__content {
   color: rgba(0,0,0,.87);
   background-color: $primary;

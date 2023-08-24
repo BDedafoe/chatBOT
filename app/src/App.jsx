@@ -70,11 +70,12 @@ function App() {
 
   
     const apiRequestBody = {
-      "model": "gpt-3.5-turbo",
+      "model": "gpt-3.5-turbo-16k",
       "messages": [
         systemMessage,  // The system message DEFINES the logic of chatGPT
         ...apiMessages // The messages from chat with chatGPT
-      ]
+      ],
+      "temperature": 0.5,
     }
 
     await fetch("https://api.openai.com/v1/chat/completions", 
