@@ -1,25 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;1,400&display=swap');
 
-// $primary: #d3e8ff;
-// $secondary: #fe49a7;
-// $background: #0a0b0c;
-// $border: #7176fa;
-// $input:  #141415;
-// $font: #d3e8ff;
+:root {
 
-// $primary: #FF6F61;  //Living Coral
-// $secondary: #F9B775; //Mango Mojito
-// $background: #0a0b0c;
-// $border: #F9B775; 
-// $input:  #141415;
-// $font: #fcfcfc;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 
-$primary: #1abc9c; // Teal
-$secondary: #9c27b0;
-$background: #ffffff; // Grey
+}
+
+$primary: #ffa895; 
+$secondary: #55ee3a;
+$background: #2f3538;
 $border: #00bcd4;
-$input:  #e2fbfe;
-$font: #03a9f4; // Cyan
+$input:  #2f3538;
+$font: #07e7fb; 
 
 body {
   margin: 0;
@@ -29,6 +22,7 @@ body {
 }
 
 .cs-main-container {
+  position: relative;
   border: outset 6px $border;
   border-radius: 15px;
   box-sizing: border-box;
@@ -108,54 +102,12 @@ body {
     overflow: hidden;
   }
   .cs-main-container {
-    height: 80vh;
-  }
-}
-
-// Portrait orientation for iPhone 5/SE/6/7/8:
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) { 
-  body {
-    overflow: hidden;
-  }
-  .cs-main-container {
-    height: 80vh;
+    height: 650px;
+    width: 100%;
   }
 }
 
 
-// Landscape orientation for iPhone 5/SE/6/7/8:
-
-@media only screen and (min-device-width : 568px) and (max-device-width : 320px) and (orientation : landscape) { 
-  body {
-    overflow: hidden;
-  }
-  .cs-main-container {
-    height: 80vh;
-  }
-}
-
-// Portrait orientation for iPhone X/XS/11 Pro:
-
-@media only screen and (min-device-width : 375px) and (max-device-width : 812px) and (orientation : portrait) { 
-  body {
-    overflow: hidden;
-  }
-  .cs-main-container {
-    height: 80vh;
-  }
-}
-
-// Landscape orientation for iPhone X/XS/11 Pro:
-
-@media only screen and (min-device-width : 812px) and (max-device-width : 375px) and (orientation : landscape) { 
-  body {
-    overflow: hidden;
-  }
-  .cs-main-container {
-    height: 80vh;
-  }
-}
 
 
 

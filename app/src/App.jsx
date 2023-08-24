@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react'
-import style from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
+import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import { MainContainer, ChatContainer, Message, MessageList, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
@@ -12,7 +12,7 @@ const systemMessage = { //  The chatBOT is a helpful assistant
 function App() {
   const [messages, setMessages] = useState([
     {
-      message: "What's up!? How can I help",
+      message: "Hello, problem-solving guru! Need a sidekick to help tackle any challenges that come your way?",
       sentTime: "just now",
       sender: "ChatGPT"
     }
@@ -103,7 +103,7 @@ function App() {
           <ChatContainer>       
             <MessageList 
               scrollBehavior="smooth" 
-              typingIndicator={isTyping ? <TypingIndicator content="One moment"/> : null}
+              typingIndicator={isTyping ? <TypingIndicator content="One sec..."/> : null}
             >
               {messages.map((message, i) => {
                 console.log(message)
